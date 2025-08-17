@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - To-Do List App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> TaskMaster</h1>
+            <p>Organize your life, one task at a time</p>
+        </header>
+
+        <div class="app-container">
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <select id="categorySelect">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="datetime-local" id="reminderInput">
+                <button id="addTaskBtn"><i class="fas fa-plus"></i> Add Task</button>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="personal">Personal</button>
+                    <button class="filter-btn" data-filter="work">Work</button>
+                    <button class="filter-btn" data-filter="shopping">Shopping</button>
+                    <button class="filter-btn" data-filter="other">Other</button>
+                </div>
+                <div class="status-filter">
+                    <button class="status-btn active" data-status="all">All</button>
+                    <button class="status-btn" data-status="active">Active</button>
+                    <button class="status-btn" data-status="completed">Completed</button>
+                </div>
+            </div>
+
+            <div class="task-list">
+                <ul id="taskList">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+            </div>
+
+            <div class="stats-section">
+                <p>Total tasks: <span id="totalTasks">0</span></p>
+                <p>Completed: <span id="completedTasks">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="editTaskInput">
+            <select id="editCategorySelect">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="datetime-local" id="editReminderInput">
+            <button id="saveEditBtn">Save Changes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
